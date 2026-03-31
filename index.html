@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>City of Alameda Development Impact Fee Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="site-title-row">
+        <h1>City of Alameda Development Impact Fee Calculator</h1>
+        <span class="version-pill">v1.0 · FY 25-26 · WCAG Compliant</span>
+      </div>
+      <p class="site-tagline" id="feeCalcDesc">
+        Use this tool to estimate Citywide Development Impact Fees (DIF). DIF does not apply to projects in Alameda Point.
+      </p>
+    </header>
+
+    <main id="main-content" aria-describedby="feeCalcDesc">
+      <div class="layout">
+        <section class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Development Impact Fee (DIF) Calculator</div>
+              <div class="card-subtitle">
+                Select a land use category and enter project size to estimate fees.
+              </div>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="difCategory" class="field-label">DIF land use category</label>
+            <select id="difCategory">
+              <option value="">Select a land use category</option>
+              <option value="res-sf">Residential – Single-family dwelling</option>
+              <option value="res-mf">Residential – Multiple-family dwelling</option>
+              <option value="res-adu">Residential – Accessory unit (exempt)</option>
+              <option value="nr-retail">Nonresidential – Retail</option>
+              <option value="nr-office">Nonresidential – Office</option>
+              <option value="nr-warehouse">Nonresidential – Warehouse</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label">Project scale</label>
+            <div class="field-row">
+              <div class="field-col">
+                <label for="difUnitsInput">Residential units</label>
+                <input id="difUnitsInput" type="number" min="0" />
+              </div>
+
+              <div class="field-col">
+                <label for="difSqftInput">Square feet</label>
+                <input id="difSqftInput" type="number" min="0" />
+              </div>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <div class="totals-grid">
+              <div>Public Safety</div>
+              <div id="difPublicSafetyDisplay">$0.00</div>
+
+              <div>Public Facilities</div>
+              <div id="difPublicFacilitiesDisplay">$0.00</div>
+
+              <div>Transportation</div>
+              <div id="difTransportationDisplay">$0.00</div>
+
+              <div>Parks</div>
+              <div id="difParksDisplay">$0.00</div>
+
+              <div class="total-label">Total DIF</div>
+              <div class="total-value" id="difTotalDisplay">$0.00</div>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button id="clearButton" class="btn">Clear</button>
+            <button id="printButton" class="btn btn-primary">Print</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      Contact planning@alamedaca.gov | 510-747-6805
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
